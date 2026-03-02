@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Võ Phước Hậu</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <!-- Inter Font (same as CV) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#0b1220;
+      --bg2:#05070c;
+      --card: rgba(255,255,255,0.96);
+      --card2: rgba(249,250,251,0.88);
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --brand:#3498db;
+      --brand2:#74ebd5;
+      --dark:#0f172a;
+    }
+
+    body{
+      background:
+        radial-gradient(1200px 500px at 20% 10%, rgba(52,152,219,.22), transparent 60%),
+        radial-gradient(900px 400px at 80% 20%, rgba(116,235,213,.18), transparent 55%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      color: var(--text);
+    }
+
+    /* Layout */
+    .portfolio-shell{
+      padding: 26px 0;
+    }
+
+    .portfolio-container{
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 28px 24px;
+      margin: 16px auto 40px;
+      max-width: 980px;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      min-width: 240px;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      border-right: 1px solid rgba(255,255,255,0.35);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .sidebar h4{
+      color: var(--brand);
+      font-weight: 800;
+      letter-spacing: .2px;
+      margin: 0;
+    }
+
+    .sidebar .nav-link{
+      color: #0f172a;
+      font-weight: 700;
+      border-radius: 12px;
+      padding: 10px 12px;
+      transition: background 0.2s, transform 0.15s;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .sidebar .nav-link:hover{
+      background: rgba(52,152,219,.10);
+      transform: translateY(-1px);
+    }
+
+    .sidebar .nav-link.active{
+      background: rgba(52,152,219,.14);
+      border: 1px solid rgba(52,152,219,.25);
+    }
+
+    /* Header */
+    .page-title{
+      font-weight: 900;
+      letter-spacing: .2px;
+      color: var(--dark);
+      margin-bottom: 6px;
+      font-size: 2rem;
+    }
+    .page-subtitle{
+      color: var(--muted);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    /* Project sections */
+    .project-section{
+      margin-top: 18px;
+      padding-top: 8px;
+    }
+
+    .project-header{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .project-name{
+      margin:0;
+      font-weight: 900;
+      color: var(--brand);
+      letter-spacing: .2px;
+      font-size: 1.35rem;
+    }
+
+    .badge{
+      border-radius: 999px;
+      font-weight: 800;
+      padding: 7px 12px;
+      letter-spacing: .2px;
+    }
+
+    .project-card{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(15,23,42,0.92);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+      padding: 18px 18px;
+    }
+
+    .project-desc{
+      color: rgba(248,249,250,0.90);
+      line-height: 1.75;
+      margin-bottom: 14px;
+      font-size: .98rem;
+    }
+
+    .video-wrapper{
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 12px;
+    }
+    .video-wrapper iframe{
+      position:absolute; top:0; left:0; width:100%; height:100%;
+      border-radius: 14px;
+    }
+
+    .btn{
+      border-radius: 12px;
+      font-weight: 800;
+      padding: 8px 12px;
+    }
+
+    hr{
+      border-color: rgba(17,24,39,0.10);
+      margin: 22px 0;
+    }
+
+    /* Mobile sidebar */
+    #toggleSidebar{
+      top: 18px;
+      left: 18px;
+      z-index: 1000;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 768px){
+      #sidebar{ width: 250px; }
+      main{ margin-left: 0 !important; }
+      .portfolio-container{
+        padding: 20px 14px;
+        margin-top: 58px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <button id="toggleSidebar" class="btn btn-outline-light position-fixed d-md-none">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="container-fluid portfolio-shell">
+    <div class="row">
+
+      <!-- Sidebar -->
+      <nav id="sidebar"
+           class="col-md-3 col-lg-2 sidebar position-fixed vh-100 overflow-auto"
+           style="left:0; top:0; transition:left 0.3s;">
+        <div class="pt-4 px-3">
+          <div class="d-flex align-items-center justify-content-between">
+            <h4>Mục lục</h4>
+            <button id="closeSidebar" class="btn btn-sm btn-light d-md-none" style="border-radius:10px;">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <ul class="nav flex-column mt-3" style="gap: 6px;">
+            <li class="nav-item">
+              <a class="nav-link" href="#selected-projects">
+                <i class="fa-solid fa-layer-group" style="color:var(--brand)"></i>
+                <span>Selected Projects</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#elf-adventure">
+                <i class="fa-solid fa-fire-flame-curved" style="color:var(--brand)"></i>
+                <span>Elf Adventure</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#world-of-islands">
+                <i class="fa-solid fa-water" style="color:var(--brand)"></i>
+                <span>World Of Islands</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#slime-roguelike">
+                <i class="fa-solid fa-skull-crossbones" style="color:var(--brand)"></i>
+                <span>Slime</span>
+              </a>
+            </li>
+          </ul>
+
+          <a href="index.html" class="btn btn-outline-primary mt-4 w-100">
+            <i class="fa-solid fa-arrow-left"></i> Back to CV
+          </a>
+
+          <div class="mt-3" style="color:var(--muted); font-size:.92rem; line-height:1.6;">
+            <b style="color:#0f172a;">Tip:</b> Click item to jump.
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main content -->
+      <main class="col-md-9 col-lg-10 offset-md-3 offset-lg-2">
+        <div class="portfolio-container">
+
+          <section id="selected-projects">
+            <div class="page-title">Selected Projects</div>
+            <p class="page-subtitle">A quick showcase of my highlighted projects with short descriptions and videos.</p>
+          </section>
+
+          <!-- PROJECT 1 -->
+          <section id="elf-adventure" class="project-section">
+            <div class="project-header">
+              <h3 class="project-name">Elf Adventure</h3>
+              <span class="badge bg-primary">Unity • Mobile</span>
+            </div>
+
+            <div class="project-card">
+              <p class="project-desc">
+                A 2D turn-based idle roguelike RPG where players progress through battles, upgrade equipment,
+                and strengthen their character over time. The game focuses on strategic skill usage, stat progression,
+                and long-term character growth.
+              </p>
+
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/zH4urWSSIJs?si=Kksbc3OR6FXkF0CQ"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+
+              <!-- Add when available -->
+              <!--
+              <a href="https://play.google.com/store/apps/details?id=..."
+                 class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+                <i class="fa-brands fa-google-play"></i> CH Play
+              </a>
+              -->
+            </div>
+          </section>
+
+          <hr />
+
+          <!-- PROJECT 2 -->
+          <section id="world-of-islands" class="project-section">
+            <div class="project-header">
+              <h3 class="project-name">World Of Islands</h3>
+              <span class="badge bg-primary">Procedural • Prototype</span>
+            </div>
+
+            <div class="project-card">
+              <p class="project-desc">
+                An open-world sandbox prototype featuring procedurally generated terrain and infinite map exploration.
+                Players can freely explore the environment while interacting with enemies and dynamic world elements.
+              </p>
+
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/rtzAHnROvlc?si=ijsRk8je9ROnFsRm"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+
+              <a href="https://uyi981.itch.io/world-of-islands"
+                 class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+                <i class="fa-brands fa-itch-io"></i> itch.io
+              </a>
+            </div>
+          </section>
+
+          <hr />
+
+          <!-- PROJECT 3 -->
+          <section id="slime-roguelike" class="project-section">
+            <div class="project-header">
+              <h3 class="project-name">Slime</h3>
+              <span class="badge bg-primary">Boss Fight • Roguelike</span>
+            </div>
+
+            <div class="project-card">
+              <p class="project-desc">
+                A 2D action roguelike prototype focused on boss battles. Players fight against a boss that uses
+                different attack skills based on distance and combat conditions.
+              </p>
+
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/W8ROAd5GGwc?si=e60w7f4ymEQqLX59"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar responsive toggle
+    function setSidebarState() {
+      var sidebar = document.getElementById('sidebar');
+      var toggleBtn = document.getElementById('toggleSidebar');
+      var closeBtn = document.getElementById('closeSidebar');
+
+      if (window.innerWidth < 768) {
+        if (!sidebar.classList.contains('sidebar-open')) {
+          sidebar.style.left = '-260px';
+        }
+        toggleBtn.style.display = 'block';
+        if (closeBtn) closeBtn.style.display = 'inline-block';
+      } else {
+        sidebar.style.left = '0';
+        sidebar.classList.remove('sidebar-open');
+        toggleBtn.style.display = 'none';
+        if (closeBtn) closeBtn.style.display = 'none';
+      }
+    }
+
+    window.addEventListener('resize', setSidebarState);
+    window.addEventListener('DOMContentLoaded', setSidebarState);
+
+    document.getElementById('toggleSidebar').onclick = function() {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.style.left = '0';
+      sidebar.classList.add('sidebar-open');
+    };
+
+    document.getElementById('closeSidebar').onclick = function() {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.style.left = '-260px';
+      sidebar.classList.remove('sidebar-open');
+    };
+
+    // Active nav link on click (simple)
+    document.querySelectorAll('#sidebar .nav-link').forEach(function(link){
+      link.addEventListener('click', function(){
+        document.querySelectorAll('#sidebar .nav-link').forEach(function(l){ l.classList.remove('active'); });
+        link.classList.add('active');
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
