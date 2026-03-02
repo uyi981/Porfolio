@@ -33,12 +33,12 @@
 
     body{
       background:
-        radial-gradient(1200px 500px at 20% 10%, rgba(52,152,219,.22), transparent 60%),
-        radial-gradient(900px 400px at 80% 20%, rgba(116,235,213,.18), transparent 55%),
+        radial-gradient(900px 400px at 15% 10%, rgba(124,58,237,.25), transparent 60%),
+        radial-gradient(700px 350px at 85% 20%, rgba(34,211,238,.20), transparent 60%),
         linear-gradient(135deg, var(--bg1), var(--bg2));
       font-family: 'Inter', sans-serif;
-      min-height: 100vh;
       color: var(--text);
+      min-height: 100vh;
     }
 
     /* ===== Backdrop for mobile sidebar ===== */
@@ -57,10 +57,11 @@
     }
 
     .portfolio-container{
-      background: var(--card);
-      border-radius: 18px;
-      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.90);
+      border-radius: 22px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
       border: 1px solid rgba(255,255,255,0.35);
+      backdrop-filter: blur(12px);
       padding: 28px 24px;
       margin: 16px auto 40px;
       max-width: 980px;
@@ -95,13 +96,13 @@
     }
 
     .sidebar .nav-link:hover{
-      background: rgba(52,152,219,.10);
+      background: rgba(124,58,237,.10);
       transform: translateY(-1px);
     }
 
     .sidebar .nav-link.active{
-      background: rgba(52,152,219,.14);
-      border: 1px solid rgba(52,152,219,.25);
+      background: rgba(124,58,237,.14);
+      border: 1px solid rgba(124,58,237,.25);
     }
 
     /* ===== Header ===== */
@@ -148,9 +149,9 @@
     }
 
     .project-card{
-      border-radius: 16px;
+      border-radius: 18px;
       border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(15,23,42,0.92);
+      background: linear-gradient(145deg, rgba(30,27,75,0.94), rgba(15,23,42,0.92));
       box-shadow: 0 14px 40px rgba(0,0,0,0.22);
       padding: 18px 18px;
     }

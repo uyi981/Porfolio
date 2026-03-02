@@ -17,24 +17,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-:root{
-  --bg1:#0b0f19;
-  --bg2:#05070c;
+    :root{
+      --bg1:#0f0c29;
+      --bg2:#24243e;
+      --card: rgba(255,255,255,0.95);
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
 
-  --card:#111827;
-  --text:#f1f5f9;
-  --muted:#94a3b8;
-  --line:#1f2937;
-
-  --brand:#6366f1;      /* Indigo nhẹ */
-  --brand2:#8b5cf6;     /* Purple accent */
-  --dark:#ffffff;
-}
+      --brand:#7c3aed;      /* Purple */
+      --brand2:#a78bfa;     /* Light purple */
+      --accent:#22d3ee;     /* Cyan highlight */
+      --dark:#1e1b4b;
+    }
 
     body{
       background:
-        radial-gradient(1200px 500px at 20% 10%, rgba(52,152,219,.22), transparent 60%),
-        radial-gradient(900px 400px at 80% 20%, rgba(116,235,213,.18), transparent 55%),
+        radial-gradient(900px 400px at 15% 10%, rgba(124,58,237,.25), transparent 60%),
+        radial-gradient(700px 350px at 85% 20%, rgba(34,211,238,.20), transparent 60%),
         linear-gradient(135deg, var(--bg1), var(--bg2));
       font-family: 'Inter', sans-serif;
       color: var(--text);
@@ -48,16 +48,17 @@
     }
 
     .cv-container{
-     background: #0f172a;
-      border-radius: 18px;
-      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.92);
+      border-radius: 22px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
       border: 1px solid rgba(255,255,255,0.35);
+      backdrop-filter: blur(12px);
       overflow: hidden;
     }
 
     /* LEFT PANEL */
     .left-panel{
-      background: linear-gradient(180deg, rgba(52,152,219,.06), rgba(255,255,255,0));
+      background: linear-gradient(180deg, rgba(124,58,237,.06), rgba(255,255,255,0));
       border-right: 1px solid var(--line);
       padding: 26px 22px;
       position: sticky;
@@ -70,8 +71,8 @@
       height: 148px;
       object-fit: cover;
       border-radius: 999px;
-      border: 5px solid rgba(116,235,213,.65);
-      box-shadow: 0 10px 26px rgba(52,152,219,0.18);
+      border: 5px solid rgba(34,211,238,.65);
+      box-shadow: 0 10px 26px rgba(124,58,237,0.18);
       margin-bottom: 14px;
     }
 
@@ -132,28 +133,34 @@
       padding: 26px 26px;
     }
 
+    section{
+      margin-bottom: 28px;
+    }
+
     .section-title{
       display:flex;
       align-items:center;
       gap:10px;
+      font-size: 1.15rem;
+      letter-spacing: .3px;
       font-weight: 900;
       color: var(--dark);
       margin-top: 8px;
       margin-bottom: 12px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(124,58,237,.20);
     }
     .section-title i{ color: var(--brand); }
 
     .lead-text{
-      color:#ffffff;
+      color:#1f2937;
       line-height: 1.75;
       margin-bottom: 4px;
     }
 
     /* PROJECTS */
     .timeline{
-      border-left: 2px solid rgba(52,152,219,.35);
+      border-left: 2px solid rgba(124,58,237,.35);
       margin-left: 10px;
       padding-left: 18px;
     }
@@ -161,12 +168,11 @@
     .timeline-item{
       position: relative;
       margin: 16px 0 22px;
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-    background: #111827;
-border: 1px solid #1f2937;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+      padding: 18px;
+      border: 1px solid rgba(124,58,237,.15);
+      border-radius: 18px;
+      background: linear-gradient(145deg, #ffffff, #f8f8ff);
+      box-shadow: 0 15px 35px rgba(124,58,237,.08);
     }
 
     .timeline-item::before{
@@ -179,7 +185,7 @@ border: 1px solid #1f2937;
       background: var(--card);
       border: 3px solid var(--brand);
       border-radius: 50%;
-      box-shadow: 0 6px 18px rgba(52,152,219,.18);
+      box-shadow: 0 6px 18px rgba(124,58,237,.18);
     }
 
     .project-head{
@@ -207,12 +213,13 @@ border: 1px solid #1f2937;
       display:inline-flex;
       align-items:center;
       gap:8px;
-      font-weight:900;
+      font-weight:800;
       border-radius: 999px;
-      padding: 6px 12px;
-      background: rgba(52,152,219,.12);
-      color:#3288d3;
-      border: 1px solid rgba(52,152,219,.25);
+      padding: 6px 14px;
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      color:#ffffff;
+      border:none;
+      box-shadow: 0 6px 20px rgba(124,58,237,.25);
       margin: 10px 0 10px;
     }
 
@@ -229,7 +236,7 @@ border: 1px solid #1f2937;
     .timeline-item ul{
       margin: 0;
       padding-left: 18px;
-      color:#ffffff;
+      color:#1f2937;
     }
     .timeline-item li{
       margin: 6px 0;
@@ -243,12 +250,16 @@ border: 1px solid #1f2937;
       gap: 12px;
     }
     .skill-card{
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 14px 14px;
-     background: #111827;
-border: 1px solid #1f2937;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.05);
+      border: 1px solid rgba(124,58,237,.12);
+      border-radius: 18px;
+      padding: 16px;
+      background: linear-gradient(145deg, #ffffff, #f4f4ff);
+      box-shadow: 0 12px 30px rgba(124,58,237,.08);
+      transition: all .25s ease;
+    }
+    .skill-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(124,58,237,.15);
     }
     .skill-title{
       display:flex;
@@ -296,9 +307,9 @@ border: 1px solid #1f2937;
       .left-panel{
         padding: 18px 14px;
         background:
-          radial-gradient(700px 220px at 20% 0%, rgba(52,152,219,.20), transparent 60%),
-          radial-gradient(520px 180px at 85% 10%, rgba(116,235,213,.16), transparent 55%),
-          linear-gradient(135deg, rgba(52,152,219,.08), rgba(255,255,255,0));
+          radial-gradient(700px 220px at 20% 0%, rgba(124,58,237,.20), transparent 60%),
+          radial-gradient(520px 180px at 85% 10%, rgba(34,211,238,.16), transparent 55%),
+          linear-gradient(135deg, rgba(124,58,237,.08), rgba(255,255,255,0));
       }
 
       .profile-img{
@@ -401,7 +412,7 @@ border: 1px solid #1f2937;
           <!-- Career Objective -->
           <section>
             <div class="section-title">
-            <i class="fa-solid fa-compass"></i> Career Objective
+              <i class="fa-solid fa-bullseye"></i> Career Objective
             </div>
             <p class="lead-text">
               My goal is to become a dependable Unity Developer who can take ownership of gameplay systems,
@@ -428,7 +439,7 @@ border: 1px solid #1f2937;
           <!-- Projects -->
           <section class="mt-4">
             <div class="section-title">
-             <i class="fa-solid fa-diagram-project"></i> Projects
+              <i class="fa-solid fa-briefcase"></i> Projects
             </div>
 
             <div class="timeline">
@@ -512,7 +523,7 @@ border: 1px solid #1f2937;
           <!-- Skills -->
           <section class="mt-4">
             <div class="section-title">
-             <i class="fa-solid fa-laptop-code"></i> Skills
+              <i class="fa-solid fa-screwdriver-wrench"></i> Skills
             </div>
 
             <div class="skills-grid">
