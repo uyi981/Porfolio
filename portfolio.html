@@ -161,7 +161,40 @@
       margin-bottom: 14px;
       font-size: .98rem;
     }
+.project-block-title{
+  font-weight: 900;
+  color: var(--dark);
+  margin: 12px 0 8px;
+  font-size: 1.05rem;
+}
 
+.project-block-title::after{
+  content:"";
+  display:block;
+  height: 2px;
+  width: 54px;
+  margin-top: 6px;
+  background: rgba(99,102,241,.55);
+  border-radius: 999px;
+}
+
+.project-desc{
+  color: rgba(248,249,250,0.92);
+  line-height: 1.75;
+  margin-bottom: 10px;
+  font-size: .98rem;
+}
+
+.resp-list{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(248,249,250,0.92);
+}
+
+.resp-list li{
+  margin: 8px 0;
+  line-height: 1.65;
+}
     .video-wrapper{
       position: relative;
       padding-bottom: 56.25%;
@@ -317,11 +350,24 @@
             </div>
 
             <div class="project-card">
-              <p class="project-desc">
-                A 2D turn-based idle roguelike RPG where players progress through battles, upgrade equipment,
-                and strengthen their character over time. The game focuses on strategic skill usage, stat progression,
-                and long-term character growth.
-              </p>
+             <div class="project-block-title">Game Description</div>
+<p class="project-desc">
+  Elf Adventure is a 2D idle, turn-based RPG focused on automated combat and long-term progression.
+  In each stage, players level up and pick 1 of several Upgrade Cards to shape their build.
+  After clearing stages, players earn resources to upgrade equipment and prepare for tougher battles.
+</p>
+<p class="project-desc mb-2">
+  <b>Status:</b> Closed Testing on Google Play.
+</p>
+
+<div class="project-block-title">My Responsibilities</div>
+<ul class="resp-list">
+  <li>Designed and implemented the core turn-based combat system: damage calculation, skill effects, and battle flow control.</li>
+  <li>Built the Upgrade Card system: level-up selection logic, scalable data structure, and balancing support.</li>
+  <li>Developed equipment progression with stat scaling and upgrade flow.</li>
+  <li>Integrated PlayFab for cloud save/load and player data management.</li>
+  <li>Implemented mobile monetization with Unity IAP and Rewarded Ads.</li>
+</ul>
 
               <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/zH4urWSSIJs?si=Kksbc3OR6FXkF0CQ"
@@ -348,10 +394,24 @@
             </div>
 
             <div class="project-card">
-              <p class="project-desc">
-                An open-world sandbox prototype featuring procedurally generated terrain and infinite map exploration.
-                Players can freely explore the environment while interacting with enemies and dynamic world elements.
-              </p>
+          <div class="project-block-title">Game Description</div>
+<p class="project-desc">
+  World of Island is a 3D low-poly open-world sandbox featuring procedurally generated terrain using noise-based algorithms.
+  The world is split into chunks, enabling near-infinite exploration via dynamic loading and unloading.
+</p>
+<p class="project-desc">
+  Core gameplay includes exploration, combat, and a crafting system where players choose a base weapon and combine three materials
+  to forge a new weapon that inherits properties from those materials.
+</p>
+
+<div class="project-block-title">My Responsibilities (Solo Project)</div>
+<ul class="resp-list">
+  <li>Designed and implemented <b>procedural terrain generation</b> using noise-based techniques.</li>
+  <li>Built a <b>chunk-based world streaming</b> system for stable performance in an open-world environment.</li>
+  <li>Developed a modular <b>AI state machine</b> (idle, patrol, chase, attack, return).</li>
+  <li>Implemented the <b>weapon crafting system</b> with stat inheritance from three selected materials.</li>
+  <li>Structured and optimized <b>entity management</b> to support large-scale environments.</li>
+</ul>
 
               <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/rtzAHnROvlc?si=ijsRk8je9ROnFsRm"
@@ -375,10 +435,20 @@
             </div>
 
             <div class="project-card">
-              <p class="project-desc">
-                A 2D action roguelike prototype focused on boss battles. Players fight against a boss that uses
-                different attack skills based on distance and combat conditions.
-              </p>
+      <div class="project-block-title">Game Description</div>
+<p class="project-desc">
+  Slime is a 2D action platformer roguelike where players progress through stages, defeat enemies, and fight bosses.
+  Each run grants random mutations from chests, enabling diverse builds and improving replayability.
+</p>
+
+<div class="project-block-title">My Responsibilities</div>
+<ul class="resp-list">
+  <li>Designed and implemented the <b>Boss AI behavior system</b>.</li>
+  <li>Built <b>distance-based decision logic</b> for skill selection.</li>
+  <li>Implemented boss abilities: <b>pull</b>, <b>falling rocks</b>, <b>burrow/teleport</b>, and <b>melee/ranged</b> attacks.</li>
+  <li>Designed <b>cooldowns</b>, <b>skill priority</b>, and <b>phase transitions</b> to create dynamic boss fights.</li>
+  <li>Tuned combat pacing and fairness through <b>telegraph timing</b> and readable attack patterns.</li>
+</ul>
 
               <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/W8ROAd5GGwc?si=e60w7f4ymEQqLX59"
